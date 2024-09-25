@@ -6,6 +6,13 @@ import CartModal from './components/CartModal';
 import { CartItem } from './types/cart-item.type';
 import './App.css';
 
+// Add in images to the cards and also to the cart and cart modal
+// Styling for all sections
+// Semantic markup
+// Check accessibility, add aria labels if needed (shopping cart icon)
+// Make sure all images have alt text
+// refactor the code
+
 function App() {
 	// Start with empty cart
 	const [cartItems, setCartItems] = useState<CartItem[] | null>(null);
