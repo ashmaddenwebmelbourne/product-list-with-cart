@@ -15,7 +15,7 @@ type DessertCardProps = {
 const DessertCard = ({ dessert, cartItems, addToCart, updateQuanity, removeFromCart }: DessertCardProps) => {
 	return (
 		<article>
-			<DessertImage />
+			<DessertImage dessertImage={dessert.image} />
 			<AddToCart
 				dessert={dessert}
 				cartItems={cartItems}

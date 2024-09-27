@@ -12,8 +12,8 @@ type DessertListProps = {
 
 const DessertList = ({ dessertData, cartItems, addToCart, updateQuanity, removeFromCart }: DessertListProps) => {
 	return (
-		<section>
-			<h1 className='text-[2.5rem] font-bold font-red-hat-text text-rose-900'>Desserts</h1>
+		<section className='w-full desktop:max-w-[50rem]'>
+			<h1 className='text-[2.5rem] font-bold font-red-hat-text text-rose-900 mb-8'>Desserts</h1>
 			<div className='grid grid-cols-1 tablet:grid-cols-3 gap-6 tablet:gap-x-6 tablet:gap-y-8'>
 				{dessertData.map((dessert) => (
 					<DessertCard

@@ -84,7 +84,7 @@ function App() {
 	};
 
 	return (
-		<main>
+		<main className='max-w-[76rem] mx-auto flex flex-col desktop:flex-row gap-8 items-start'>
 			<DessertList
 				dessertData={dessertData}
 				cartItems={cartItems}
@@ -99,7 +99,12 @@ function App() {
 				removeFromCart={removeFromCart}
 				confirmOrder={confirmOrder}
 			/>
-			<CartModal orderConfirmed={orderConfirmed} cartItems={cartItems} totalCost={getTotalCost()} />
+			<CartModal
+				dessertData={dessertData}
+				orderConfirmed={orderConfirmed}
+				cartItems={cartItems}
+				totalCost={getTotalCost()}
+			/>
 		</main>
 	);
 }

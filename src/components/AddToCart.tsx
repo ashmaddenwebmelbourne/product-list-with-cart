@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import cartIcon from '../assets/images/icon-add-to-cart.svg';
+import decrementQuality from '../assets/images/icon-decrement-quantity.svg';
+import incrementQuality from '../assets/images/icon-increment-quantity.svg';
 import { CartItem } from '../types/cart-item.type';
 import { Dessert } from '../types/dessert.type';
 
@@ -48,16 +50,29 @@ const AddToCart = ({ dessert, cartItems, addToCart, updateQuantity, removeFromCa
 	return (
 		<div>
 			{itemQuantity > 0 && (
-				<div>
-					<button onClick={decreaseItemQuantity}>-</button>
-					<p>{itemQuantity}</p>
-					<button onClick={increaseItemQuantity}>+</button>
+				<div className='flex items-center justify-between gap-2 bg-red rounded-full py-3 px-4 max-w-[10rem] mx-auto mt-[-2rem] z-10 relative border border-red min-h-[3.125rem]'>
+					<div
+						onClick={decreaseItemQuantity}
+						className='cursor-pointer border border-white rounded-full w-5 h-5 flex items-center justify-center'
+					>
+						<img src={decrementQuality} alt='Remove item' />
+					</div>
+					<p className='font-red-hat-text font-semibold text-sm text-white'>{itemQuantity}</p>
+					<div
+						onClick={increaseItemQuantity}
+						className='cursor-pointer border border-white rounded-full w-5 h-5 flex items-center justify-center'
+					>
+						<img className='cursor-pointer' src={incrementQuality} alt='Add item' />
+					</div>
 				</div>
 			)}
 			{itemQuantity === 0 && (
-				<div>
-					<img src={cartIcon} alt='cart icon' />
-					<button onClick={handleAddToCart}>{itemQuantity === 0 ? 'Add to Cart' : 'Add Another'}</button>
+				<div
+					onClick={handleAddToCart}
+					className=' cursor-pointer flex items-center justify-center gap-2 bg-white rounded-full p-3 px-4 max-w-[10rem] mx-auto border border-rose-400 mt-[-2rem] z-10 relative min-h-[3.125rem]'
+				>
+					<img className='w-5 h-6' src={cartIcon} alt='' aria-hidden='true' />
+					<button className='font-red-hat-text font-semibold text-sm text-rose-900'>Add to Cart</button>
 				</div>
 			)}
 		</div>
